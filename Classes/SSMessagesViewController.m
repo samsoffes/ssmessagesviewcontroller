@@ -147,6 +147,13 @@ CGFloat kInputHeight = 40.0f;
 	_inputBackgroundView.frame = CGRectMake(0.0f, 160.0f, self.view.frame.size.width, kInputHeight);
 	[_sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[UIView commitAnimations];
+	
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[_tableView numberOfRowsInSection:0]-1
+                                                inSection:0];
+    
+   	[_tableView scrollToRowAtIndexPath:indexPath
+                          atScrollPosition:UITableViewScrollPositionBottom
+                                  animated:YES];
 }
 
 
